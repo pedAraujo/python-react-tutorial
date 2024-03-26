@@ -1,0 +1,66 @@
+This is a python backend and react front end tutorial app
+
+1 - create frontend folder
+
+    create the react app using vite template
+    
+        $ npm create vite@latest <my-react-app-folder-name> -- --template react
+
+    in this case, let's use
+
+        $ npm create vite@latest frontend -- --template react
+        
+    this will create the frontend folder with a react template project
+
+2 - create a backend folder
+
+    $ mkdir backend
+
+3 - set up python env
+
+    $ cd backend
+
+    $ python -m venv .venv
+
+    $ source .venv/bin/activate
+
+4 - create the API
+
+    create files
+        main.py
+            main routes/endpoints
+        models.py
+            database models (how we interact with the DB)
+            when using SQAlchemy, we create a python Class for our objects
+        config.py
+            main configurations 
+
+    typical architecture flow is starting with data and work to the corresponding views. So we are doing
+        config > models > main
+        (configurations > data handling > routes) 
+
+    config.py
+
+        create the Flask app instance 
+            app = Flask(__name__)
+
+        create basic configurations like SQLAlchemy setup and db instance creation
+        wrap the app with CORS(app) 
+
+    model.py
+
+        create the classes with their methods. One of the methods will be to_json and will create a json object to comunicate with the frontend
+
+    main.py
+
+        create the routes
+        think about what you need to CRUD
+
+5 - frontend
+
+    clean up useless folders and files from the template
+        /assets
+        app.jsx
+            remove vite logo and assets
+            remove everything on the return brakets <>
+        
