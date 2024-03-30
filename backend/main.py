@@ -3,14 +3,14 @@ from config import app, db
 from models import Contact
 
 
-@app.route("/contacts", methods=["GET"])
+@app.route("/contacts/", methods=["GET"])
 def get_contacts():
     contacts = Contact.query.all()
     json_contacts = map(lambda contact: contact.to_json(), contacts)
     return jsonify({"contacts": list(json_contacts)})
 
 
-@app.route("/create_contact", methods=["POST"])
+@app.route("/create_contact/", methods=["POST"])
 def create_contact():
     first_name = request.json.get("firstName")
     last_name = request.json.get("lastName")

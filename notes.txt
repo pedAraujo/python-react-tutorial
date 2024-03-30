@@ -64,3 +64,11 @@ This is a python backend and react front end tutorial app
             remove vite logo and assets
             remove everything on the return brakets <>
         
+
+    run the frontend with vite tool 
+
+        npm run dev
+
+    it will run in a frontend port. Open it on the browser to see the frontend and the requests on the inspect console
+    
+        
